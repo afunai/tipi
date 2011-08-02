@@ -56,9 +56,13 @@
 					slide_counter           :   1,		//Display slide numbers
 					slide_captions          :   1,		//Slide caption (Pull from "title" in slides array)
 					slides 					:  	[		//Slideshow Images
-														{image : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.1/slides/wilderness1.jpg', title : 'Wilderness by Larissa Felsen', url : 'http://www.nonsensesociety.com/2011/02/larissa/'},
-														{image : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.1/slides/wilderness2.jpg', title : 'Wilderness by Larissa Felsen', url : 'http://www.nonsensesociety.com/2011/02/larissa/'},
-														{image : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.1/slides/wilderness3.jpg', title : 'Wilderness by Larissa Felsen', url : 'http://www.nonsensesociety.com/2011/02/larissa/'}
+<% for image in images %>
+														{
+															image : 'http://twitpic.com/show/large/<%== image[:short_id] %>',
+															title : '<%= image[:message] %>',
+															url   : 'http://twitpic.com/<%== image[:short_id] %>'
+														},
+<% end %>
 												]
 												
 				}); 
@@ -85,11 +89,9 @@
 
 
 	<div id="content">
-		<h3><a href="http://www.buildinternet.com" ><img src="img/buildinternet-logo.png"/></a></h3>
+		<h3>TiPi</h3>
 		<p>
-			Photography by Larissa Felsen<br/>
-			<a href="http://www.nonsensesociety.com/2011/02/larissa/" alt="Nonsense Society" target="_blank">Nonsense Society</a>
-			<a href="http://www.flickr.com/photos/stille-photography" alt="Flickr" target="_blank">Flickr</a>
+			test<br/>
 		</p>
 	</div>
 
@@ -112,9 +114,6 @@
 			<div id="navigation">
 				<img id="prevslide" src="img/back_dull.png"/><img id="pauseplay" src="img/pause_dull.png"/><img id="nextslide" src="img/forward_dull.png"/>
 			</div>
-			
-			<!--Logo in bar-->
-			<a href="http://www.buildinternet.com/project/supersized" class="stamp"><img src="img/supersized-logo.png"/></a>
 			
 		</div>
 	</div>
