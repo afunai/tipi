@@ -18,7 +18,7 @@ get '/:username' do
   images = doc.elements.collect('user/images/image') do |image|
     {
       :short_id  => image.elements['short_id'].text,
-      :message   => image.elements['message'].text,
+      :message   => image.elements['message'].text.gsub(/\s/, ' '),
       :timestamp => image.elements['timestamp'].text,
     }
   end
