@@ -32,19 +32,19 @@
 					autoplay				:	1,		//Slideshow starts playing automatically
 					start_slide             :   1,		//Start slide (0 is random)
 					random					: 	0,		//Randomize slide order (Ignores start slide)
-					slide_interval          :   3000,	//Length between transitions
+					slide_interval          :   7000,	//Length between transitions
 					transition              :   6, 		//0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
 					transition_speed		:	1000,	//Speed of transition
 					new_window				:	1,		//Image links open in new window/tab
-					pause_hover             :   0,		//Pause slideshow on hover
+					pause_hover             :   1,		//Pause slideshow on hover
 					keyboard_nav            :   1,		//Keyboard navigation on/off
 					performance				:	2,		//0-Normal, 1-Hybrid speed/quality, 2-Optimizes image quality, 3-Optimizes transition speed // (Only works for Firefox/IE, not Webkit)
 					image_protect			:	1,		//Disables image dragging and right click with Javascript
 					image_path				:	'img/', //Default image path
 
 					//Size & Position
-					min_width		        :   1024,		//Min width allowed (in pixels)
-					min_height		        :   768,		//Min height allowed (in pixels)
+					min_width		        :   640,		//Min width allowed (in pixels)
+					min_height		        :   480,		//Min height allowed (in pixels)
 					vertical_center         :   1,		//Vertically center background
 					horizontal_center       :   1,		//Horizontally center background
 					fit_portrait         	:   1,		//Portrait images will not exceed browser height
@@ -59,6 +59,7 @@
 <% for image in images %>
 														{
 															image : 'http://twitpic.com/show/large/<%== image[:short_id] %>',
+															thumb : 'http://twitpic.com/show/thumb/<%== image[:short_id] %>',
 															title : '<%= image[:message] %>',
 															url   : 'http://twitpic.com/<%== image[:short_id] %>'
 														},
@@ -73,12 +74,9 @@
 		<style type="text/css">
 		
 			/*Demo Styles*/
-			p{ padding:0 30px 30px 30px; color:#fff; font:11pt "Helvetica Neue", "Helvetica", Arial, sans-serif; text-shadow: #000 0px 1px 0px; line-height:200%; }
-				p a{ font-size:10pt; text-decoration:none; outline: none; color:#ddd; background:#222; border-top:1px solid #333; padding:5px 8px; -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; -moz-box-shadow: 0px 1px 1px #000; -webkit-box-shadow: 0px 1px 1px #000; box-shadow: 0px 1px 1px #000; }
-					p a:hover{ background-color:#427cb4; border-color:#5c94cb; color:#fff; }
-			h3{ padding:30px 30px 20px 30px; }
+			h3{ padding:15px; color:#fff; font:11pt "Helvetica Neue", "Helvetica", Arial, sans-serif; text-shadow: #000 0px 1px 0px;}
 			
-			#content{ position:absolute; top:50px; left:50px; background:#111; background:rgba(0,0,0,0.65); width:360px; text-align:left; }
+			#content{ position:absolute; top:20px; left:20px; background:#111; background:rgba(0,0,0,0.35); width:200px; text-align:left; }
 			.stamp{ float: right; margin: 15px 30px 0 0;}
 			
 		</style>
