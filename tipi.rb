@@ -10,6 +10,11 @@ get '/:username' do
   xml = Net::HTTP.get_response(URI.parse url).body
   doc = REXML::Document.new xml
 
+  user = {
+    :username   => doc.elements['user/username'].text,
+    :avatar_url => doc.elements['user/avatar_url'].text,
+  }
+
   images = doc.elements.collect('user/images/image') do |image|
     {
       :short_id  => image.elements['short_id'].text,
@@ -18,6 +23,6 @@ get '/:username' do
     }
   end
 
-  erubis :carousel, :locals => {:images => images}
+  erubis :carousel, :locals => {:user => user, :images => images}
 
 end
