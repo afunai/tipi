@@ -1,0 +1,8 @@
+Quickstart:
+  % ruby tipi.rb
+  % open http://localhost:4567/username
+
+Supersized jQuery Plugin is:
+  Copyright (c) 2011 Sam Dunn / One Mighty Roar (www.onemightyroar.com)
+  Project Website: http://www.buildinternet.com/project/supersized/
+  Github project available at: https://github.com/buildinternet/supersized
