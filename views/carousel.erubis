@@ -25,6 +25,19 @@
 		<script type="text/javascript">  
 			
 			jQuery(function($){
+				var slides = new Array(
+				<% for image in images %>
+					{
+						image : 'http://twitpic.com/show/large/<%== image[:short_id] %>',
+						thumb : 'http://twitpic.com/show/thumb/<%== image[:short_id] %>',
+						title : '<%= image[:message] %>',
+						url   : 'http://twitpic.com/<%== image[:short_id] %>'
+					},
+				<% end %>
+					{}
+				);
+				slides.pop();
+
 				$.supersized({
 				
 					//Functionality
@@ -55,17 +68,7 @@
 					thumbnail_navigation    :   1,		//Thumbnail navigation
 					slide_counter           :   1,		//Display slide numbers
 					slide_captions          :   1,		//Slide caption (Pull from "title" in slides array)
-					slides 					:  	[		//Slideshow Images
-<% for image in images %>
-														{
-															image : 'http://twitpic.com/show/large/<%== image[:short_id] %>',
-															thumb : 'http://twitpic.com/show/thumb/<%== image[:short_id] %>',
-															title : '<%= image[:message] %>',
-															url   : 'http://twitpic.com/<%== image[:short_id] %>'
-														},
-<% end %>
-												]
-												
+					slides 					:   slides		//Slideshow Images
 				}); 
 		    });
 		    
